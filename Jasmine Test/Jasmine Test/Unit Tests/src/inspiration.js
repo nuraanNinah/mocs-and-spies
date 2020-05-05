@@ -1,37 +1,37 @@
-var inspiration = function () {
-    return 'live, love , laugh';
-}
-
 class Email {
-  
-    constructor(qoute, number) {
 
-        this._qoute = qoute;
+    constructor(number, message) {
         this._number = number;
+        this._message = message;
+
     }
 
     //Getters and setters
-    getQoute = function () {
+    getNumber() {
+        return this.number;
+        setNumber = function (number) {
+            this._number = number;
+        }
 
-        console.log(this._qoute);
-        return this.qoute;
     }
-    setQoute = function (qoute) { this._qoute = qoute; }
 
-    getNumber = function (numbering) { return this._number + numbering; }
-    setNumber = function (number) { this._number = number; }
+    getQuote() {
+        return this.quote;
+        setQuote = function (quote) {
+            this._quote = quote;
+        }
+
+    }
 
     //Public methods
-    addInspiration = function () { this._number++; }
-    toString = function () {
+    toString() {
 
-        console.log(`send email ${this.getQoute()} to ${this.getnumber()} .`)
-        return (`send email ${this.getQoute()} to ${this.getNumber(3, 3)} .`)
+        console.log(`${this.getNumber()} to ${this.getQuote()} .`)
+        return (`send email: ${this.getNumber()} to ${this.getQuote()} .`)
     }
 }
 
-var email = new Email('where theres a will theres a way', '0623883653');
+var email = new Email('0623883653', 'where theres a will theres a way');
 
-email.getQoute();
 
 email.toString();
